@@ -1,0 +1,15 @@
+package com.learnspring.udemy.learningSpring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.learnspring.udemy.learningSpring.entities.Cat;
+
+public class Main {
+	public static void main(String[] args) {
+		// create an empty Spring Context that will look for its own beans 
+		// based on the annotations in the specified package
+		ApplicationContext context = new AnnotationConfigApplicationContext("com.learnspring.udemy.learningSpring.entities");
+		Cat cat = context.getBean(Cat.class);
+	}
+}

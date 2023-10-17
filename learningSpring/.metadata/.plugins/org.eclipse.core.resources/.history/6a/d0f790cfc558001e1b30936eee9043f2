@@ -1,0 +1,26 @@
+package com.learnspring.udemy.learningSpring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.learnspring.udemy.learningSpring.entities.Cat;
+import com.learnspring.udemy.learningSpring.entities.Dog;
+import com.learnspring.udemy.learningSpring.entities.Parrot;
+
+public class Main {
+	public static void main(String[] args) {
+		// create an empty Spring Context that will look for its own beans 
+		// based on the annotations in the specified package
+		ApplicationContext context = new AnnotationConfigApplicationContext("com.learnspring.udemy.learningSpring.entities");
+		
+		Cat cat = context.getBean(Cat.class);
+		//When Spring creates a Dog object, it gives the object a standard name
+		// which is the class name but with an initial lowercase letter. In this case, our class is called Dog, so the bean's name is be "dog".
+		Dog dog = (Dog) context.getBean("dog");
+		Parrot parrot = context.getBean("parrot-polly", Parrot.class);
+		
+		System.out.println(cat.getName());
+		System.out.println(dog.getName());
+		System.out.println(parrot.getName());
+	}
+}

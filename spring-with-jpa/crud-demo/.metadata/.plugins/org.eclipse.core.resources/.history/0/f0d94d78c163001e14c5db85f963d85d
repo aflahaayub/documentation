@@ -1,0 +1,13 @@
+package com.luvtocode.cruddemo.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.luvtocode.cruddemo.entity.Student;
+
+@Repository
+public class StudentDAOImpl implements StudentDAO {
+	@Override
+	public void save(Student theStudent) {
+		
+	}
+}

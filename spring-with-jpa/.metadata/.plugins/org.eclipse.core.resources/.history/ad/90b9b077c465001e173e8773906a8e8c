@@ -1,0 +1,50 @@
+package com.luvtocode.cruddemo.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.luvtocode.cruddemo.entity.Student;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
+
+@Repository
+public class StudentDAOImpl implements StudentDAO {
+	// DEFINE FIELD FOR ENTITY MANAGER
+	private EntityManager entityManager;
+	
+	// INJECT ENTIUTY MANAGER USING CONSTRUCTOR INJ
+	@Autowired
+	public StudentDAOImpl(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+	
+	// IMPLEMENT SAVE METHOD
+	@Override
+	@Transactional
+	public void save(Student theStudent) {
+		entityManager.persist(theStudent);
+	}
+	
+	//Implement findById method
+	@Override
+	public Student findById(Integer id) {
+		return entityManager.find(Student.class, id);
+	}
+
+	@Override
+	public List<Student> findAll() {
+		// create query 
+		//sort by last name
+		TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
+		
+		//return query results 
+		return theQuery.getResultList();
+	}
+
+
+	
+}

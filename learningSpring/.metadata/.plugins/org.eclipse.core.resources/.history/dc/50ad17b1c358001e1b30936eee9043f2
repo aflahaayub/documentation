@@ -1,0 +1,5 @@
+package com.learnspring.udemy.learningSpring.entities;
+
+public class Dog {
+	private String name = "Doggy Dog";
+}

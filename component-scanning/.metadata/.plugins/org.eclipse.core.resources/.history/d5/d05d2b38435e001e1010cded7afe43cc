@@ -1,0 +1,12 @@
+package com.udemylearn.springcoredemo;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoController {
+	// define a private field for the dependency
+	private Coach myCoach;
+	// create constructor class for injection
+	
+	
+}

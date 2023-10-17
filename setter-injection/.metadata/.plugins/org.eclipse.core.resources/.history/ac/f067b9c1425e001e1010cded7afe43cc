@@ -1,0 +1,13 @@
+package com.udemylearn.springcoredemo;
+
+
+public class CricketCoach implements Coach{
+
+	@Override
+	public String getDailiyWorkout() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

@@ -1,0 +1,17 @@
+package com.udemylearn.springcoredemo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DemoController {
+	// define a private field for the dependency
+	private Coach myCoach;
+	
+	// create constructor class for dep. injection
+	@Autowired
+	public DemoController(Coach theCoach) {
+		myCoach = theCoach;
+	}
+	
+}

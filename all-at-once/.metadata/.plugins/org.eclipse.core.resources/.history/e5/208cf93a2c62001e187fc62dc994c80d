@@ -1,0 +1,5 @@
+package com.udemylearn.springcoredemo.config;
+
+public class SportConfig {
+
+}

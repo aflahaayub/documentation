@@ -1,0 +1,6 @@
+package com.udemylearn.springcoredemo;
+
+public interface Coach {
+	
+	String getDailiyWorkout();
+}

@@ -1,0 +1,15 @@
+package com.learnspring.udemy.learningSpring.entities;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Parrot {
+	private String name=  "Parroty Parr";
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+}

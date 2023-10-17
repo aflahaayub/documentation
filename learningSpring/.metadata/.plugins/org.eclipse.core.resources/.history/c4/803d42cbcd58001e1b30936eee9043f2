@@ -1,0 +1,15 @@
+package com.learnspring.udemy.learningSpring.configs;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.learnspring.udemy.learningSpring.entities.Cat;
+
+@Configuration
+public class MyConfig {
+	
+	@Bean 
+	public Cat getCat() {
+		return new Cat();
+	}
+}

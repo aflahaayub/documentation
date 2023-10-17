@@ -1,0 +1,26 @@
+package com.luvtocode.cruddemo.dao;
+
+import java.util.List;
+
+import com.luvtocode.cruddemo.entity.Student;
+
+public interface StudentDAO {
+
+	void save(Student theStudent);
+	
+	Student findById(Integer id);
+	
+	List<Student> findAll();
+	
+	// find student by their lastname
+	List<Student> findByLastName(String theLastName);
+	
+	// UPDATE
+	void update(Student theStudent);
+	
+	//DELETE
+	void delete(Integer id);
+	
+	int deleteAll();
+	
+}

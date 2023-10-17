@@ -1,0 +1,29 @@
+package com.luvtocode.cruddemo;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.luvtocode.cruddemo.dao.StudentDAO;
+
+@SpringBootApplication
+public class CrudDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CrudDemoApplication.class, args);
+	}
+	
+	@Bean
+	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+//		CommanLineRunner is come from the Spring boot framework
+		return runner -> {
+			createStudent(studentDAO);
+			}; // lamba expression is shortcut expression for providing an implementation of commandLineRunner interface 
+	}
+	
+	public void createStudent(StudentDAO studentDAO) {
+		
+	}
+
+}
